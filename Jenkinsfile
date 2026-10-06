@@ -14,5 +14,10 @@ pipeline {
                 sh "mvn clean package -DskipTests"
             }
         }
+        stage("Building the docker image") {
+            steps {
+                sh "docker build -t dock-jen ."
+            }
+        }
     }
 }
